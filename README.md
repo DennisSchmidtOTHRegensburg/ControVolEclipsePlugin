@@ -37,6 +37,7 @@ Version: Mars Release 4.5.0, Mars.1 Release 4.5.1, Mars.2 Release 4.5.2)
   
 **Installation and deinstallation of the plugin:**   
 The plugin can be installed and deinstalled with the Eclipse Update Manager with Help>Install New Software. For installation the path to the local Feature-folder has to be stated.    
+
 **Configure a example database-project**  
 In the given example a database-project with MongoDB and Morphia is used. In the
 example a guestbook-software with the class Guestbook is stated. The
