@@ -43,14 +43,14 @@ example a guestbook-software with the class Guestbook is stated. The
 plugin only considers classes in which valid Mophia/Obectify imports and annotation
 are present. This means it only considers classes which objects can be stored in the
 datastore with the objectmapper Morphia/Objectify.  
-![projectpreparation](/Projectpreparation.jpg "ControVolEclipsePlugin")  
+![projectpreparation](/docs/Projectpreparation.jpg "ControVolEclipsePlugin")  
 
 To be able to use the functions of the plugin the project has to be configured. With the selection Convert to ControVol Project a folder called ControVol is created in the database-project.
 With the selection Register current Version the current class decleration is saved in a
 xml-file which will be stored in the ControVol-folder. Perhaps the project has to be
 updated with *F5*. Every class and attribute which can be stored in the datastore is
 listed in the xml-file.
-![Configure](/Configure.jpg "ControVolEclipsePlugin")  
+![Configure](/docs/Configure.jpg "ControVolEclipsePlugin")  
 
 **The controlled schema Evolution:**  
 Every change in the class declarations which objects can be stored in the datastore
@@ -60,7 +60,7 @@ Perhaps the Java-file has to be saved with *Strg+S* to make the warning visible.
 codefix for the waring can be selected. If the current project is declared as a release
 with Register current Version a second xml-file is created. Changes made
 to the class declearation are now checked with both xml-files.  
-![Quickfix](/Quickfix.jpg "ControVolEclipsePlugin")  
+![Quickfix](/docs/Quickfix.jpg "ControVolEclipsePlugin")  
 
 #Developer Guide
 **Requirements:**
