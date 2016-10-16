@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application location="/Users/PHolanda/Documents/ControvolProject/CastlesSample/">
+  <entity name="com.castle.persistence.Armory" location="src/" superName="java.lang.Object">
+    <attribute name="damage" type="java.lang.Integer" access="" location="com.castle.persistence.Armory" line="16" />
+    <attribute name="defense" type="java.lang.Integer" access="" location="com.castle.persistence.Armory" line="19" />
+    <attribute name="weapon" type="java.lang.String" access="" location="com.castle.persistence.Armory" line="13" />
+  </entity>
+  <entity name="com.castle.persistence.Player" location="src/" superName="com.castle.persistence.AbstractPlayer">
+    <attribute name="gear" type="com.castle.persistence.List&lt;Armory&gt;" access="" location="com.castle.persistence.Player" line="29" />
+    <attribute name="level" type="java.lang.Integer" access="" location="com.castle.persistence.AbstractPlayer" line="5" />
+    <attribute name="name" type="java.lang.String" access="" location="com.castle.persistence.Player" line="19" />
+    <attribute name="rank" type="java.lang.Integer" access="" location="com.castle.persistence.Player" line="22" />
+    <attribute name="score" type="java.lang.Double" access="" location="com.castle.persistence.Player" line="25" />
+    <attribute name="type" type="java.lang.String" access="" location="com.castle.persistence.Player" line="27" />
+  </entity>
+</application>

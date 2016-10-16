@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<!--***************-->
+	<!-- ** BUILDER ** -->
+	<!--***************-->
+
+	<extension 
+		id="builder" name="ControVol Builder" point="org.eclipse.core.resources.builders">
+		<builder>
+         	<run class="com.controvol.Builder">
+            	<parameter name="optimize" value="true" />
+            	<parameter name="comment" value="ControVol Builder" />
+         	</run>
+      	</builder>
+	</extension>
+
+	<!--**************-->
+	<!-- ** NATURE ** -->
+	<!--**************-->	
+	
+	<extension point="org.eclipse.core.resources.natures" id="com.controvol.nature" name="ControVol Nature">
+		<runtime>
+			<run class="com.controvol.natures.ControVolNature" />
+		</runtime>
+	</extension>
+	
+	<!--********************************-->
+	<!-- ** RIGHT-CLICK ON A PROJECT ** -->
+	<!--********************************-->
+	
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution objectClass="org.eclipse.core.resources.IProject" adaptable="true" id="iprojectcontributions">
+			<visibility>
+				<and>
+					<objectState name="nature" value="org.eclipse.jdt.core.javanature"/>
+					<objectState name="nature" value="com.controvol.nature"/>
+					<objectState name="open" value="true"/>
+				</and>
+			</visibility>
+		   	<menu
+			    id="com.controvol.controvol.menu"
+			    label="ControVol"
+			    path="additions"
+			    icon="icons/controvol.png">
+			    <separator name="group1"/>
+			    <separator name="group2"/>
+		    </menu>
+			<action label="Register current version" 
+				class="com.controvol.actions.FixAction"
+				menubarPath="com.controvol.controvol.menu/group1" 
+				id="com.controvol.controvol.runA" />
+			<action label="Remove ControVol Nature" 
+				class="com.controvol.actions.RemoveNatureAction"
+		        menubarPath="com.controvol.controvol.menu/group2" 
+		        id="com.controvol.controvol.removeNature" />
+		</objectContribution>
+	</extension>
+	
+	<!--************************************-->
+	<!-- ** CONVERT TO ControVol PROJECT ** -->
+	<!--************************************-->
+	
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution objectClass="org.eclipse.core.resources.IProject" adaptable="true" id="iprojectcontributions">
+			<visibility>
+				<and>
+					<objectState name="nature" value="org.eclipse.jdt.core.javanature"/>
+					<not>
+						<objectState name="nature" value="com.controvol.nature"/>
+					</not>
+					<objectState name="open" value="true"/>
+				</and>
+			</visibility>
+			<action label="Convert to ControVol Project" 
+				class="com.controvol.actions.AddNatureAction"
+		        menubarPath="org.eclipse.ui.projectConfigure/additions" 
+		        id="com.controvol.controvol.removeNature" />
+		</objectContribution>
+	</extension>
+	
+	<!--*****************************-->
+	<!--** MARKERS AND ANNOTATIONS **--> 
+	<!--*****************************-->
+	
+	<extension id="marker" point="org.eclipse.core.resources.markers" name="ControVol Marker">
+    	<super type="org.eclipse.core.resources.problemmarker"/>
+    	<super type="org.eclipse.core.resources.textmarker"/>
+		<persistent value="true"/>
+		<attribute name="jsonFixes"/>
+	</extension>
+
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type markerSeverity="2" name="com.controvol.annotations.annotation" super="org.eclipse.ui.workbench.texteditor.error"/>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerUpdaters">
+		<updater id="com.controvol.marker.MarkerUpdater" class="com.controvol.markers.MarkerUpdater"/>
+	</extension>
+	
+	
+	
+	<!--**************-->
+	<!--** QUICKFIX **--> 
+	<!--**************-->
+
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator markerType="com.controvol.marker" class="com.controvol.quickfix.QuickFixer" />
+	</extension>	
+
+	<!--*****************-->
+	<!--** REFACTORING **--> 
+	<!--*****************-->
+	
+	<extension point="org.eclipse.ltk.core.refactoring.renameParticipants">
+		<renameParticipant class="com.controvol.refactoring.RefactorClass" name="com.controvol.refactoring.renameClass" id="com.controvol.refactoring.renameClass">
+			<enablement>
+				<instanceof value="org.eclipse.jdt.core.IType"/>
+			</enablement>
+		</renameParticipant>
+	</extension>
+	
+	<extension point="org.eclipse.ltk.core.refactoring.renameParticipants">
+		<renameParticipant class="com.controvol.refactoring.RefactorAttribute" name="com.controvol.refactoring.renameAttribute" id="com.controvol.refactoring.renameAttribute">
+			<enablement>
+				<instanceof value="org.eclipse.jdt.core.IField"/>
+			</enablement>
+		</renameParticipant>
+	</extension>
+	
+</plugin>

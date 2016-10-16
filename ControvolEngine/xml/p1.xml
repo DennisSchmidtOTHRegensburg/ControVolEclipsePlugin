@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application location="jar/player-v1.jar" version="1">
+  <entity name="com.example.objectify.player.Player" location="\">
+    <attribute name="name" type="class java.lang.String" access="" location="\com.example.objectify.player.Player" />
+    <attribute name="rank" type="class java.lang.Integer" access="" location="\com.example.objectify.player.Player" />
+    <attribute name="type" type="class java.lang.String" access="" location="\com.example.objectify.player.Player" />
+    <attribute name="value" type="class java.lang.Float" access="" location="\com.example.objectify.player.Player" />
+  </entity>
+</application>
