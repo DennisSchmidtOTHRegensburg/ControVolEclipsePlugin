@@ -1,20 +1,20 @@
 # ControVol Eclipse-Plugin
 ## An Eclipse-Plugin for controlled Schema-Evolution in NoSQL-Datastore MongoDB/Google Datastore.
 
-Schema-free datastores like MongoDB or Google Datastore provide high flexiblity in agile software development. In such a process the software is released early and then updated frequently.
+Schema-free datastores like MongoDB or Google Datastore provide high flexiblity in agile software development. In such a process the software is released early and updated frequently.
 Furthermore in professional software development objectmapper-libraries like Morphia
 are used to fill the gap between the object-orientated program-language and the datastore-model.
 Those objectmappers implicate a schema in the otherwise schema-free datastore.
-Through frequent updates of the software big problems occur after changing the
+With frequent updates of the software problems occur after changing the
 schema resp. class-declarations (schema-evolution): After changing the class-declaration
 pervious saved objects keep their schema and were then loaded with the new class-declaration.
-As a result dataloss or runtime errors could occure.
+As a result dataloss or runtime errors may occure.
 This Eclipse-Plugin supports developers on controlled schema evolution with the
 objectmappers Morphia for MongoDB and Objectify for Google Datatstore.
 Changes made to class-declarations are compared to earlier releases of the software.
-The plugin detects possible problems and offers solutions through the Eclipse QuickFix Popup.
+The plugin detects possible problems and offers solutions through the Eclipse-QuickFix Popup.
   
-There are two videos available showing possible uses cases:
+There are two videos available in the doc-folder showing possible uses cases:
 - In the first video the Eclipse-Plugin detects that renaming an attribute leads to data loss. Therefore it suggests using proper annotations of the used objectmapper.
 - In the second video the type of an attribute is changed from String to Integer. The plugin detects that a runtime-error will occur and suggests proper solutions. 
 
@@ -39,18 +39,20 @@ Version: Mars Release 4.5.0, Mars.1 Release 4.5.1, Mars.2 Release 4.5.2)
 The plugin can be installed and deinstalled with the Eclipse Update Manager with Help>Install New Software. For installation the path to the local Feature-folder has to be stated.    
 
 **Configure a example database-project**  
-In the given example a database-project with MongoDB and Morphia is used. In the
+In the given example the MorphiaTestProject with MongoDB and Morphia is used. In this
 example a guestbook-software with the class Guestbook is stated. The
 plugin only considers classes in which valid Mophia/Obectify imports and annotation
 are present. This means it only considers classes which objects can be stored in the
 datastore with the objectmapper Morphia/Objectify.  
+
 ![projectpreparation](/docs/Projectpreparation.jpg "ControVolEclipsePlugin")  
 
 To be able to use the functions of the plugin the project has to be configured. With the selection Convert to ControVol Project a folder called ControVol is created in the database-project.
 With the selection Register current Version the current class decleration is saved in a
 xml-file which will be stored in the ControVol-folder. Perhaps the project has to be
 updated with *F5*. Every class and attribute which can be stored in the datastore is
-listed in the xml-file.
+listed in the xml-file.  
+
 ![Configure](/docs/Configure.jpg "ControVolEclipsePlugin")  
 
 **The controlled schema Evolution:**  
@@ -61,6 +63,7 @@ Perhaps the Java-file has to be saved with *Strg+S* to make the warning visible.
 codefix for the waring can be selected. If the current project is declared as a release
 with Register current Version a second xml-file is created. Changes made
 to the class declearation are now checked with both xml-files.  
+
 ![Quickfix](/docs/Quickfix.jpg "ControVolEclipsePlugin")  
 
 #Developer Guide
@@ -76,7 +79,7 @@ Maven is used to download and to add the necessary libraries to the ControVolEng
 Maven is also used to generate a jar-file from the ConrovolEngine-project. This jar will then be added along with other libraries to the ControvolEclipsePlugin-project. It is possible to download the necessary libraries and generating a jar without Maven.  
   
 **ControvolEngine-project**  
-First copy the ControvlEngine-project to the Eclipse-workspace and install and configure Maven.
+First copy the ControvolEngine-project to the Eclipse-workspace and install and configure Maven.
 With the terminal/cmd change to the path of the ControvolEngine-folder and execute
 the following Maven-commands:  
   
