@@ -25,7 +25,7 @@ Detailed explanation on the annotations for controlled schema evolution were pro
 - **ControvolEclipsePlugin:** The plugin for controlled schema-evolution. This project uses the jar which is generated in the ControvolEngine-project.
 - **ControvolEclipsePluginFeature**: A Project which holds a reference to the ControvolEclipsePlugin-project.
 This project defines the installation-routine for the plugin. This project can be exported as a feature with the Eclipse Export Manager. The result of the export is the Feature-folder.
-- **Feature-folder:** With this folder the plugin is installable with the Eclipse Update Manager.
+- **Feature-folder:** With this folder the plugin is installable with the Eclipse Update Manager. [download here](https://www.dropbox.com/s/dnmw4n4vtjzhyyp/Feature.zip?dl=0)
 - **MorphiaTestProject:** Test-project with the objectmapper Morphia
 - **ObjectifyTestProject:** Test-project with the objectmapper Objectify
 
