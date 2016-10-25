@@ -25,7 +25,7 @@ Detailed explanation on the annotations for controlled schema evolution were pro
 - **ControvolEclipsePlugin:** The plugin for controlled schema-evolution. This project uses the jar which is generated in the ControvolEngine-project.
 - **ControvolEclipsePluginFeature**: A Project which holds a reference to the ControvolEclipsePlugin-project.
 This project defines the installation-routine for the plugin. This project can be exported as a feature with the Eclipse Export Manager. The result of the export is the Feature-folder.
-- **Feature-folder:** With this folder the plugin is installable with the Eclipse Update Manager. [download here](https://www.dropbox.com/s/dnmw4n4vtjzhyyp/Feature.zip?dl=0)
+- **Feature-folder** [Download here](https://www.dropbox.com/s/dnmw4n4vtjzhyyp/Feature.zip?dl=0)**:** With this folder the plugin is installable with the Eclipse Update Manager (See User Guide below).   
 - **MorphiaTestProject:** Test-project with the objectmapper Morphia
 - **ObjectifyTestProject:** Test-project with the objectmapper Objectify
 
@@ -36,7 +36,7 @@ Version: Mars Release 4.5.0, Mars.1 Release 4.5.1, Mars.2 Release 4.5.2)
 - OS: Windows 7,8, Unix or Mac OS X (Tested with Windows 7,8, Unix)
   
 **Installation and deinstallation of the plugin:**   
-The plugin can be installed and deinstalled with the Eclipse Update Manager with Help>Install New Software. For installation the path to the local Feature-folder has to be stated.    
+[Download](https://www.dropbox.com/s/dnmw4n4vtjzhyyp/Feature.zip?dl=0) and extract the Feature-folder. Then open Eclipse IDE and go to the Eclipse Update Manager with Help>Install New Software. For installation the path to the Feature-folder has to be stated.    
 
 **Configure a example database-project**  
 In the given example the MorphiaTestProject with MongoDB and Morphia is used. In this
@@ -47,7 +47,7 @@ datastore with the objectmapper Morphia/Objectify.
 
 ![projectpreparation](/docs/Projectpreparation.jpg "ControVolEclipsePlugin")  
 
-To be able to use the functions of the plugin the project has to be configured. With the selection Convert to ControVol Project a folder called ControVol is created in the database-project.
+To be able to use the functions of the plugin the project has to be configured. Right click on the MorphiaTestProject at the Package Explorer. With the selection Convert to ControVol Project a folder called ControVol is created in the database-project.
 With the selection Register current Version the current class decleration is saved in a
 xml-file which will be stored in the ControVol-folder. Perhaps the project has to be
 updated with *F5*. Every class and attribute which can be stored in the datastore is
